@@ -1,0 +1,48 @@
+.globe-section {
+    background: transparent !important;
+}
+
+#globeViz {
+    width: 100%;
+    height: 700px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent !important;
+}
+
+/* Globe marker with glowing effect */
+.glow-marker img {
+    width: 28px;
+    height: 28px;
+    animation: glow 1.5s infinite ease-in-out;
+    box-shadow: 0 0 8px rgba(210, 180, 80, 0.7);
+    /* muted gold glow */
+    background-color: #fff;
+}
+
+canvas {
+    background-color: transparent !important;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 6px rgba(210, 180, 80, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 14px rgba(210, 180, 80, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 6px rgba(210, 180, 80, 0.5);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #globeViz {
+        height: 600px;
+    }
+}

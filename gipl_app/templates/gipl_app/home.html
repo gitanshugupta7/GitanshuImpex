@@ -1,0 +1,172 @@
+{% extends "gipl_app/base.html" %}
+
+{% load static %}
+
+
+{% block title %}Home - GIPL{% endblock %}
+
+{% block content %}
+
+<!-- Hero Image Carousel -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    {% for item in carousel_items %}
+    <div class="swiper-slide">
+      <div class="carousel-left">
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.subtitle }}</p>
+        {% if item.cta_text and item.cta_link %}
+        <a href="{{ item.cta_link }}">{{ item.cta_text }}</a>
+        {% endif %}
+      </div>
+      <div class="carousel-right d-none d-md-block" style="background-image: url('{{ item.desktop_image.url }}');">
+      </div>
+      <div class="carousel-right d-md-none" style="background-image: url('{{ item.mobile_image.url }}');"></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<!--Section After Hero-->
+<div class="row mx-0 p-md-3 d-flex align-items-center">
+  <h4 class="py-5 px-4 px-md-4 text-md-center open-sans">We at Gitanshu Impex Private Limited enables seamless Global
+    Trade by sourcing
+    <b>quality</b> products with <b>precision</b>; ensuring businesses receive the <b>finest materials.</b>
+  </h4>
+  <hr>
+</div>
+
+<!--Who We Are-->
+<div class="row mx-0 px-3 py-3">
+  <h2 class="col-12">Who We Are</h2>
+  <p class="mt-3 col-12">We simplify global trade by connecting businesses with premium-quality products, ensuring
+    smooth transactions, strict compliance, and efficient logistics. Our expertise in sourcing and exports helps
+    businesses expand seamlessly into international markets.</p>
+  <div class="col-12 col-md-6 my-4">
+    <h3 class="text-md-center">Mission</h3>
+    <p class="mt-4">To facilitate a hassle-free export business by delivering high-quality products, ensuring seamless
+      operations, and maintaining consistency in supply and compliance.</p>
+  </div>
+  <div class="col-12 col-md-6 my-4 border-md-only-start ps-lg-5">
+    <h3 class="text-md-center">Vision</h3>
+    <p class="mt-4">To be named a trusted Global Trader; expanding into new international markets while maintaining the
+      highest standards of quality and customer satisfaction.</p>
+  </div>
+  <div class="container mt-3 mb-5">
+    <div class="row g-4 px-3 justify-content-between">
+      <!-- Trust Card -->
+      <div class="col-md-4 card-wrapper">
+        <div class="card h-100 border-0">
+          <div class="card-img-top img-container">
+            <img src="{% static 'images/trust.webp' %}" alt="Trust" class="img-fluid w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">Trust</h5>
+            <p class="card-text">Built on reliability, we ensure every product meets the highest standards of quality
+              and compliance, fostering long-term global partnerships.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reach Card -->
+      <div class="col-md-4 card-wrapper">
+        <div class="card h-100 border-0">
+          <div class="card-img-top img-container">
+            <img src="{% static 'images/reach.webp' %}" alt="Reach" class="img-fluid w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">Reach</h5>
+            <p class="card-text">Expanding across continents, GIPL connects businesses worldwide, delivering diverse
+              products to meet international market demands.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Excellence Card -->
+      <div class="col-md-4 card-wrapper">
+        <div class="card h-100 border-0">
+          <div class="card-img-top img-container">
+            <img src="{% static 'images/excellence.webp' %}" alt="Excellence"
+              class="img-fluid w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">Excellence</h5>
+            <p class="card-text">Driven by 20+ years of expertise, we prioritize precision, efficiency, and innovation
+              in every trade transaction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
+
+
+<section id="product-categories" class="row mx-0  px-4 py-3">
+  <div class="container">
+    <h2 class="col-12 mb-5">Our Product Categories</h2>
+    <div class="row g-4">
+      {% for category in categories %}
+      <div class="col-md-6 my-4 my-md-0">
+        <div class="product-card d-flex flex-column flex-md-row">
+          <!-- Image Section -->
+          <div class="product-img-wrapper">
+            {% if category.image %}
+            <img src="{{ category.image.url }}" alt="{{ category.name }}"
+              class="img-fluid object-fit-cover w-100 h-100">
+            {% endif %}
+          </div>
+
+          <!-- Content Section -->
+          <div class="p-4 d-flex flex-column justify-content-center align-items-start">
+            <h5 class="product-title mb-2">{{ category.name }}</h5>
+            <p class="product-description">{{ category.description|truncatewords:20 }}</p>
+            <a href="{% url 'category_detail' category.slug %}" class="btn btn-primary mt-2">Explore</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <hr class="mt-5">
+  </div>
+</section>
+
+<!--Global Presence-->
+<section class="row mx-0 my-4 px-0 text-white">
+  <div class="p-0">
+    <h2 class="col-12 mb-4 px-4">Our Global Presence</h2>
+    <div id="globeViz"></div>
+  </div>
+</section>
+
+<section id="testimonials" class="py-3 px-3">
+  <div class="container">
+    <h2 class="px-3 mb-3">What Our Clients Say</h2>
+    <div class="row g-4">
+      {% for testimonial in testimonials %}
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-3">
+          <div class="d-flex align-items-center mb-3">
+            <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}"
+              class="rounded-circle me-3" width="50" height="50">
+            <div>
+              <h6 class="mb-0">{{ testimonial.name }}</h6>
+              <small class="text-muted">{{ testimonial.company }}</small>
+            </div>
+          </div>
+          <div class="testimonial-body p-3 bg-light-subtle rounded-3">
+            <p class="mb-0" style="font-size: 0.95rem;">“{{ testimonial.comment }}”</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <hr class="mt-5">
+</section>
+
+
+
+{% endblock %}

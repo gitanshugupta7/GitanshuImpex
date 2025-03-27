@@ -1,0 +1,57 @@
+.product-card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
+    min-height: 260px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid transparent;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-6px);
+    border-left: 4px solid var(--muted-gold); /* Gold border accent */
+    box-shadow:
+      0 16px 32px rgba(0, 0, 0, 0.15),           /* Elevation shadow */
+      0 8px 16px 4px rgba(210, 180, 80, 0.1);         /* Muted gold outer glow */
+  }
+  
+  /* Left image container */
+  .product-img-wrapper {
+    flex: 0 0 50%;
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+  
+  /* Image fills and crops properly */
+  .product-img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Right content styles */
+  .product-title {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+  }
+  
+  .product-description {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: var(--p-line);
+  }
+  
+  .testimonial-body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }

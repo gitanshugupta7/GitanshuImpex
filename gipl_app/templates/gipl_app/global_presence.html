@@ -1,0 +1,60 @@
+{% extends 'gipl_app/base.html' %}
+{% load static %}
+
+{% block title %}Global Presence - GIPL{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-4">Our Global Reach</h1>
+    <p class="text-center mx-auto" style="max-width: 800px;">
+      From Southeast Asia to the Gulf and emerging African markets, GIPL facilitates cross-border trade that delivers quality, value, and reliability. We are expanding our footprint across multiple continents to serve a wider range of industries.
+    </p>
+
+    <!-- World Map Image -->
+    <div class="text-center my-5">
+      <img src="{% static 'images/world-map.png' %}" alt="World Map" class="img-fluid" style="max-width: 800px;">
+    </div>
+
+    <!-- Export Stats -->
+    <div class="row text-center my-5">
+      <div class="col-md-4">
+        <h2>10+</h2>
+        <p>Countries Exported To</p>
+      </div>
+      <div class="col-md-4">
+        <h2>500+</h2>
+        <p>Clients Worldwide</p>
+      </div>
+      <div class="col-md-4">
+        <h2>1000+</h2>
+        <p>Containers Shipped</p>
+      </div>
+    </div>
+
+    <!-- Icon Cards -->
+    <div class="row text-center my-5">
+      <div class="col-md-3">
+        <img src="{% static 'images/logistics.png' %}" style="width: 60px;" class="mb-3">
+        <h5>Logistics Network</h5>
+        <p>Efficient shipping with optimized delivery timelines</p>
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'images/compliance.png' %}" style="width: 60px;" class="mb-3">
+        <h5>Regulatory Compliance</h5>
+        <p>We adhere to international trade and quality standards</p>
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'images/solutions.png' %}" style="width: 60px;" class="mb-3">
+        <h5>Trade Solutions</h5>
+        <p>We handle sourcing, packaging, and documentation</p>
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'images/global-partners.png' %}" style="width: 60px;" class="mb-3">
+        <h5>Global Partners</h5>
+        <p>Built on long-term trust with international buyers</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

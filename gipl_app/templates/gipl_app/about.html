@@ -1,0 +1,62 @@
+{% extends 'gipl_app/base.html' %}
+{% load static %}
+
+{% block title %}About Us - GIPL{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-4">About Gitanshu Impex Pvt. Ltd.</h1>
+    <p class="text-center mx-auto" style="max-width: 800px;">
+      With over two decades of experience in international trade, GIPL is a merchant exporter facilitating seamless global sourcing and delivery of high-quality products. From our base in Kolkata, India, we serve partners across the globe with professionalism, precision, and care.
+    </p>
+
+    <!-- Mission & Vision -->
+    <div class="row my-5">
+      <div class="col-md-6">
+        <h3>Mission</h3>
+        <p>To facilitate hassle-free export operations by delivering quality products, managing logistics, and building enduring relationships with manufacturers and international buyers.</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Vision</h3>
+        <p>To become a globally recognized export house known for reliability, product range, and dedication to international standards of service and quality.</p>
+      </div>
+    </div>
+
+    <!-- Three Core Value Cards -->
+    <div class="row text-center my-5">
+      <div class="col-md-4">
+        <img src="{% static 'images/icon-quality.png' %}" alt="Quality" class="mb-3" style="width:60px;">
+        <h5>Integrity</h5>
+        <p>We ensure transparent processes and honest communication in every trade we facilitate.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'images/icon-network.png' %}" alt="Network" class="mb-3" style="width:60px;">
+        <h5>Reliability</h5>
+        <p>We build trust through consistency in delivery, documentation, and compliance.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'images/icon-global.png' %}" alt="Global" class="mb-3" style="width:60px;">
+        <h5>Expertise</h5>
+        <p>With 20+ years of industry know-how, we understand every corner of the export ecosystem.</p>
+      </div>
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="row text-center my-5">
+      <div class="col-md-4">
+        <h2>20+</h2>
+        <p>Years of Experience</p>
+      </div>
+      <div class="col-md-4">
+        <h2>10+</h2>
+        <p>Product Categories</p>
+      </div>
+      <div class="col-md-4">
+        <h2>1,000+</h2>
+        <p>Successful Shipments</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
