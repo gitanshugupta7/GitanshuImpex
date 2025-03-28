@@ -142,8 +142,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
-
 # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
@@ -162,3 +160,7 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
+
+print("STATIC_ROOT is:", STATIC_ROOT)
