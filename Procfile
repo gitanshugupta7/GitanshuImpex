@@ -1,1 +1,1 @@
-web: gunicorn gipl_website.wsgi --log-file -
+web: bash start.sh
