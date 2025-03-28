@@ -1,0 +1,211 @@
+:root {
+  /* Font Sizes (Desktop 1440px) */
+  --h1-size: 64px;
+  --h2-size: 44px;
+  --h3-size: 40px;
+  --h4-size: 34px;
+  --h5-size: 26px;
+  --h6-size: 22px;
+  --p-size: 18px;
+
+
+  /* Line Heights */
+  --h1-line: 1.2;
+  --h2-line: 1.2;
+  --h3-line: 1.2;
+  --h4-line: 1.3;
+  --h5-line: 1.3;
+  --h6-line: 1.3;
+  --p-line: 1.4;
+
+  /* Fonts */
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Open Sans', sans-serif;
+
+  /* Colors */
+  --heading-color: #111827;
+  --text-color: #333333;
+  --cta-text: #FFFFFF;
+  --border-color: #E5E7EB;
+  --button-color: #18338C;
+  --muted-gold: #D2B450;
+  --dark-navy: #0F1F5B;
+  --soft-gray: #F5F5F5;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  font-size: var(--p-size);
+  line-height: var(--p-line);
+  margin: 0;
+  padding: 0;
+  opacity: .90;
+}
+
+a{
+  font-size: var(--p-size);
+}
+
+hr{
+  border-color: var(--text-color);
+  border-width: 0.08rem;
+}
+
+.open-sans{
+  font-family: var(--body-font) !important;
+  font-weight: 400;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .nav-link {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+h1 { font-size: var(--h1-size); line-height: var(--h1-line); }
+h2 { font-size: var(--h2-size); line-height: var(--h2-line); }
+h3 { font-size: var(--h3-size); line-height: var(--h3-line); }
+h4 { font-size: var(--h4-size); line-height: var(--h4-line); }
+h5 { font-size: var(--h5-size); line-height: var(--h5-line); }
+h6 { font-size: var(--h6-size); line-height: var(--h6-line); }
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--dark-navy);
+  color: var(--cta-text);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Initial no shadow */
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-color); /* darker tone of button-color */
+  color: var(--cta-text);
+}
+
+.logo{ height: 4rem; }
+
+i{
+  color: #333333;
+  font-size: 1.5rem;
+}
+/* Responsive Typography Scaling using Bootstrap Breakpoints */
+
+/* xs: <576px */
+@media (max-width: 575.98px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 24px; }
+  h4 { font-size: 20px; }
+  h5 { font-size: 18px; }
+  h6 { font-size: 16px; }
+  p  { font-size: 16px; }
+  .logo{ height: 3rem; }
+  .footer-logo{
+    max-height: 8rem;
+  }
+}
+
+/* sm: ≥576px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  h1 { font-size: 40px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 28px; }
+  h4 { font-size: 24px; }
+  h5 { font-size: 20px; }
+  h6 { font-size: 18px; }
+  p  { font-size: 14px; }
+  .border-md-only-start {
+    border-left: 1px solid var(--border-color); 
+  }
+}
+
+/* md: ≥768px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  h1 { font-size: 48px; }
+  h2 { font-size: 36px; }
+  h3 { font-size: 30px; }
+  h4 { font-size: 26px; }
+  h5 { font-size: 22px; }
+  h6 { font-size: 18px; }
+  p  { font-size: 16px; }
+  .border-md-only-start {
+    border-left: 1px solid var(--border-color); 
+  }
+}
+
+/* lg: ≥992px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  h1 { font-size: 56px; }
+  h2 { font-size: 42px; }
+  h3 { font-size: 36px; }
+  h4 { font-size: 30px; }
+  h5 { font-size: 24px; }
+  h6 { font-size: 20px; }
+  p  { font-size: 16px; }
+  .border-md-only-start {
+    border-left: 1px solid var(--border-color); 
+  }
+}
+
+/* xl & xxl: ≥1200px */
+@media (min-width: 1200px) {
+  h1 { font-size: var(--h1-size); }
+  h2 { font-size: var(--h2-size); }
+  h3 { font-size: var(--h3-size); }
+  h4 { font-size: var(--h4-size); }
+  h5 { font-size: var(--h5-size); }
+  h6 { font-size: var(--h6-size); }
+  p  { font-size: var(--p-size); }
+  .border-md-only-start {
+    border-left: 1px solid var(--border-color); 
+  }
+}
+
+/* Section Padding */
+.section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+}
+
+@media (min-width: 768px){
+  .footer-logo{
+    max-height: 10rem;
+  }
+}
+
+/* Container Width */
+.container {
+  max-width: 1920px;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Google translate button */
+.goog-te-gadget-simple{
+  font-family: var(--body-font);
+  padding: 0.3rem 0.7rem !important; 
+  font-size: 0.9rem !important;
+  border-radius: 10px;
+  border-color: var(--so) !important;
+}
+

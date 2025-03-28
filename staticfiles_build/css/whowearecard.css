@@ -1,0 +1,44 @@
+.img-container {
+    height: 50%;
+    max-height: 180px;
+    overflow: hidden;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.card-title {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+.card-text {
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+
+.card-wrapper {
+    max-width: 450px;
+}
+
+/* Soft hover lift effect */
+.card:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15)
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Center the cards within the row */
+@media (min-width: 992px) {
+    .who-we-are .row {
+        justify-content: center;
+        gap: 2rem;
+    }
+}
