@@ -21,20 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-xm$!%h#d3q7d==(ygvrt@47=kk(3_^v#yiy+gv2e@=(%6f(5)^"
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-EMAIL_HOST_USER = os.environ.get('GIPL_EMAIL_USER', 'gitanshuimpex@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('GIPL_EMAIL_PASSWORD', 'wmzfibbqhiveoerf')
+EMAIL_HOST_USER = os.environ.get('GIPL_EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('GIPL_EMAIL_PASSWORD')
 
 DEFAULT_FROM_EMAIL = 'GIPL <gitanshuimpex@gmail.com>'
 EMAIL_TIMEOUT = 10  # seconds
