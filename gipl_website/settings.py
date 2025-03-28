@@ -163,4 +163,6 @@ LOGGING = {
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
-print("STATIC_ROOT is:", STATIC_ROOT)
+CSRF_TRUSTED_ORIGINS = [
+    'https://gitanshuimpex-production.up.railway.app'
+]
