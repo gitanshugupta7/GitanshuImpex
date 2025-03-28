@@ -145,7 +145,7 @@
 
 
   <!-- Footer -->
-  <footer class="bg-light text-dark pt-5 pb-3" style="background-color: #F5F5F5;">
+  <footer class="pt-5 pb-3" style="background-color: #F5F5F5;">
     <div class="container">
       <div class="row mx-0">
         <!-- Logo -->
@@ -154,7 +154,7 @@
         </div>
   
         <!-- Navigation -->
-        <div class="col-md-3 mb-4 mx-2 mx-md-none">
+        <div class="col-md-3 mb-4">
           <h5 class="fw-bold mb-3 offset-md-3">Navigation</h5>
           <ul class="list-unstyled offset-md-3">
             <li class="my-3"><a href="/" class="text-dark text-decoration-none">Home</a></li>
@@ -166,7 +166,7 @@
         </div>
   
         <!-- Products -->
-        <div class="col-md-3 mb-4 mx-2 mx-md-none">
+        <div class="col-md-3 mb-4">
           <h5 class="fw-bold mb-3 offset-md-1">Products</h5>
           <ul class="list-unstyled offset-md-1">
             <li class="my-3"><a href="/products/carpenter-tools/" class="text-dark text-decoration-none">Carpenter Tools</a></li>
@@ -178,7 +178,7 @@
         </div>
   
         <!-- Contact -->
-        <div class="col-md-3 mb-4 mx-2 mx-md-none">
+        <div class="col-md-3 mb-4">
           <h5 class="fw-bold mb-3">Contact</h5>
           <p class="mb-3">
             <i class="bi bi-envelope me-2"></i> gitanshuimpex@gmail.com
@@ -272,6 +272,8 @@
       const globeImage = isDay ? textures.day : textures.night;
       const globe = Globe({ rendererConfig: { alpha: true } })(document.getElementById('globeViz'));
 
+      const isMobile = window.innerWidth <= 768;
+
       // Globe Configuration
       //globe.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg');
       //globe.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg');
@@ -281,7 +283,7 @@
       globe.renderer().setClearColor(0x000000, 0)
       globe.controls().autoRotate = true;
       globe.controls().autoRotateSpeed = 0.6;
-      globe.pointOfView({ lat: 20, lng: 78, altitude: 2.2 });
+      globe.pointOfView({ lat: 0, lng: 0, altitude: isMobile ? 3.7 : 2.6 })
 
       // Data Points with Flags
       const globePoints = [
