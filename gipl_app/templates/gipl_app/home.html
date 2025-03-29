@@ -149,8 +149,8 @@
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="card h-100 shadow-sm border-0 rounded-4 p-3">
           <div class="d-flex align-items-center mb-3">
-            <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}"
-              class="rounded-circle me-3" width="50" height="50">
+            <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" class="rounded-circle me-3" width="50"
+              height="50">
             <div>
               <h6 class="mb-0">{{ testimonial.name }}</h6>
               <small class="text-muted">{{ testimonial.company }}</small>
@@ -167,6 +167,118 @@
   <hr class="mt-5">
 </section>
 
-
-
 {% endblock %}
+
+
+<!--
+{% block extrascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.core.min.js"
+  integrity="sha512-E+bwrjS64UO37TAhlcnMswVADDY5NKoxaA/vMCUBN7Nl42bV1WwVvj1uUJ101kd/hd9HdgV4Raq0Sl+BEHgIzg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.41.3/dist/globe.gl.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const textures = {
+      day: 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg',
+      night: 'https://unpkg.com/three-globe/example/img/earth-night.jpg'
+    };
+
+    // Get current hour (24hr format)
+    const currentHour = new Date().getUTCHours()
+
+    // Switch based on time (you can adjust thresholds)
+    const isDay = currentHour >= 6 && currentHour <= 18;
+    const globeImage = isDay ? textures.day : textures.night;
+    const globe = Globe({ rendererConfig: { alpha: true } })(document.getElementById('globeViz'));
+
+    const isMobile = window.innerWidth <= 768;
+
+    // Globe Configuration
+    //globe.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg');
+    //globe.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg');
+    globe.backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png');
+    globe.globeImageUrl(globeImage)
+    globe.scene().background = null;
+    globe.renderer().setClearColor(0x000000, 0)
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 0.6;
+    globe.pointOfView({ lat: 0, lng: 0, altitude: isMobile ? 3.7 : 2.6 })
+
+    // Data Points with Flags
+    const globePoints = [
+      { lat: 22.5726, lng: 88.3639, city: 'Kolkata, India', icon: 'https://flagcdn.com/in.svg' },
+      { lat: 16.8409, lng: 96.1735, city: 'Yangon, Myanmar', icon: 'https://flagcdn.com/mm.svg' },
+      { lat: 7.8731, lng: 80.7718, city: 'Sri Lanka', icon: 'https://flagcdn.com/lk.svg' },
+      { lat: 1.3521, lng: 103.8198, city: 'Singapore', icon: 'https://flagcdn.com/sg.svg' },
+      { lat: 38.9637, lng: 35.2433, city: 'Turkey', icon: 'https://flagcdn.com/tr.svg' },
+      { lat: 9.145, lng: 40.4897, city: 'Ethiopia', icon: 'https://flagcdn.com/et.svg' },
+      {
+        lat: -34.6037,
+        lng: -58.3816,
+        city: 'Buenos Aires, Argentina',
+        icon: 'https://flagcdn.com/ar.svg'
+      },
+      {
+        lat: 24.4539,
+        lng: 54.3773,
+        city: 'Abu Dhabi, UAE',
+        icon: 'https://flagcdn.com/ae.svg'
+      },
+      {
+        lat: 25.276987,
+        lng: 55.296249,
+        city: 'Dubai, UAE',
+        icon: 'https://flagcdn.com/ae.svg'
+      },
+      {
+        lat: 19.4326,
+        lng: -99.1332,
+        city: 'Mexico City, Mexico',
+        icon: 'https://flagcdn.com/mx.svg'
+      },
+      {
+        lat: 45.4215,
+        lng: -75.6972,
+        city: 'Ottawa, Canada',
+        icon: 'https://flagcdn.com/ca.svg'
+      },
+      {
+        lat: 39.9042,
+        lng: 116.4074,
+        city: 'Beijing, China',
+        icon: 'https://flagcdn.com/cn.svg'
+      },
+      {
+        lat: 35.6895,
+        lng: 139.6917,
+        city: 'Tokyo, Japan',
+        icon: 'https://flagcdn.com/jp.svg'
+      },
+      {
+        lat: 4.1755,
+        lng: 73.5093,
+        city: 'Malé, Maldives',
+        icon: 'https://flagcdn.com/mv.svg'
+      },
+      {
+        lat: -6.2088,
+        lng: 106.8456,
+        city: 'Jakarta, Indonesia',
+        icon: 'https://flagcdn.com/id.svg'
+      }
+    ];
+
+    globe.htmlElementsData(globePoints);
+
+    globe.htmlElement(d => {
+      const el = document.createElement('div');
+      el.className = 'glow-marker';
+      el.innerHTML = `
+        <img src="${d.icon}" title="${d.city}" style="width:20px;height:auto;" />
+      `;
+      return el;
+    });
+  });
+</script>
+
+{% endblock %} -->

@@ -3,58 +3,120 @@
 
 {% block title %}Global Presence - GIPL{% endblock %}
 
+{% block extracss %}
+{% endblock %}
+
 {% block content %}
-<section class="py-5">
+<!--Global Presence-->
+<!-- Global Presence -->
+<section class="row mx-0 mb-4 px-0 text-white overflow-hidden">
+  <div class="container px-0">
+    <div id="globeViz" class="w-100"></div>
+  </div>
+</section>
+
+
+<section class="global-strengths-section py-5">
   <div class="container">
-    <h1 class="text-center mb-4">Our Global Reach</h1>
-    <p class="text-center mx-auto" style="max-width: 800px;">
-      From Southeast Asia to the Gulf and emerging African markets, GIPL facilitates cross-border trade that delivers quality, value, and reliability. We are expanding our footprint across multiple continents to serve a wider range of industries.
-    </p>
-
-    <!-- World Map Image -->
-    <div class="text-center my-5">
-      <img src="{% static 'images/world-map.png' %}" alt="World Map" class="img-fluid" style="max-width: 800px;">
+    <div class="text-center mb-5">
+      <h2 class="section-heading p-2">Seamless Logistics & Trade Expertise</h2>
+      <p class="subtitle p-3">From sourcing to final delivery, we ensure every step of the trade process is smooth, compliant, and reliable.</p>
     </div>
 
-    <!-- Export Stats -->
-    <div class="row text-center my-5">
-      <div class="col-md-4">
-        <h2>10+</h2>
-        <p>Countries Exported To</p>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6">
+        <div class="image-card">
+          <div class="image-overlay p-md-4">
+            <h5>Global Logistics Network</h5>
+            <p>Seamless worldwide shipping with optimized routes, ensuring timely and cost-effective delivery.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h2>500+</h2>
-        <p>Clients Worldwide</p>
-      </div>
-      <div class="col-md-4">
-        <h2>1000+</h2>
-        <p>Containers Shipped</p>
-      </div>
-    </div>
 
-    <!-- Icon Cards -->
-    <div class="row text-center my-5">
-      <div class="col-md-3">
-        <img src="{% static 'images/logistics.png' %}" style="width: 60px;" class="mb-3">
-        <h5>Logistics Network</h5>
-        <p>Efficient shipping with optimized delivery timelines</p>
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6">
+        <div class="image-card">
+          <div class="image-overlay p-md-4 text-end">
+            <h5>Regulatory Compliance</h5>
+            <p>Strict adherence to international trade laws and quality standards for smooth customs clearance.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <img src="{% static 'images/compliance.png' %}" style="width: 60px;" class="mb-3">
-        <h5>Regulatory Compliance</h5>
-        <p>We adhere to international trade and quality standards</p>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-md-6">
+        <div class="image-card">
+          <div class="image-overlay p-md-4">
+            <h5>End-to-End Trade Solutions</h5>
+            <p>From sourcing to final delivery, we handle procurement, packaging, and global shipping seamlessly.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <img src="{% static 'images/solutions.png' %}" style="width: 60px;" class="mb-3">
-        <h5>Trade Solutions</h5>
-        <p>We handle sourcing, packaging, and documentation</p>
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'images/global-partners.png' %}" style="width: 60px;" class="mb-3">
-        <h5>Global Partners</h5>
-        <p>Built on long-term trust with international buyers</p>
+
+      <!-- Card 4 -->
+      <div class="col-12 col-md-6">
+        <div class="image-card">
+          <div class="image-overlay p-md-4 text-end">
+            <h5>Strong Market Presence</h5>
+            <p>Expanding across regions with trusted partnerships, ensuring a steady supply chain worldwide.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!--New HTML-->
+
+<section class="impact-section py-5">
+  <div class="container">
+    <h2 class="section-heading text-center mb-4">Global Trade, Local Impact</h2>
+    <p class="text-center mb-5">Each shipment we deliver fosters sustainable business relationships, supports local economies, and elevates quality standards across industries worldwide.</p>
+    <div class="row g-4 text-center justify-content-center">
+      <div class="col-md-4 impact-card animate-in my-3 my-md-0">
+        <h2 class="muted-gold-text">35+</h2>
+        <p>Global Destinations</p>
+      </div>
+      <div class="col-md-4 impact-card animate-in my-3 my-md-0">
+        <h2 class="muted-gold-text">99%</h2>
+        <p>Client Retention</p>
+      </div>
+      <div class="col-md-4 impact-card animate-in my-3 my-md-0">
+        <h2 class="muted-gold-text">24x7</h2>
+        <p>Support & Logistics</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pipeline-section py-5 bg-soft-gray mb-4">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5">How Trade Happens</h2>
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-center pipeline-flow">
+      <div class="step">
+        <img src="{% static 'images/factory.webp' %}" alt="Manufacturer" class="pipeline-icon">
+        <p>Manufacturer</p>
+      </div>
+      <div class="arrow">&#8594;</div>
+      <div class="step">
+        <img src="{% static 'images/delivery.webp' %}" alt="Logistics" class="pipeline-icon">
+        <p>Global Logistics</p>
+      </div>
+      <div class="arrow">&#8594;</div>
+      <div class="step">
+        <img src="{% static 'images/custom-clearance.webp' %}" alt="Customs" class="pipeline-icon">
+        <p>Customs Clearance</p>
+      </div>
+      <div class="arrow">&#8594;</div>
+      <div class="step">
+        <img src="{% static 'images/distribution.webp' %}" alt="Client" class="pipeline-icon">
+        <p>Client Delivery</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}
+
