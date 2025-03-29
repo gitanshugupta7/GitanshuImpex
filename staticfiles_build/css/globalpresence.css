@@ -14,6 +14,14 @@
     background-color: transparent !important;
 }
 
+#globeViz canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    touch-action: auto;
+    pointer-events: none;
+  }
+
 /* Globe marker with glowing effect */
 .glow-marker img {
     width: 28px;
