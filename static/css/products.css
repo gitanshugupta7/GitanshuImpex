@@ -1,0 +1,36 @@
+.product-hero {
+    position: relative;
+  }
+  
+  .hero-text-overlay {
+    background: linear-gradient(to right, rgba(15, 31, 91, 0.3), rgba(15, 31, 91, 0.04)); /* Subtle overlay */
+  }
+  
+  .hero-text-overlay a.btn {
+    background-color: var(--button-color);
+    color: var(--cta-text);
+    border: none;
+  }
+
+  .category-card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
+    min-height: 260px;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid transparent;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-6px);
+    border-left: 4px solid var(--muted-gold); /* Gold border accent */
+    box-shadow:
+      0 6px 32px rgba(0, 0, 0, 0.3),           /* Elevation shadow */         /* Muted gold outer glow */
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text-overlay h1 {
+        font-size: 42px !important;
+    }
+}

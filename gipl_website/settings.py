@@ -26,7 +26,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = ['*']
+
+#ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

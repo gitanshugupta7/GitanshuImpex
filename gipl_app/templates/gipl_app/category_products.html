@@ -1,24 +1,55 @@
 {% extends 'gipl_app/base.html' %}
-{% block title %}{{ category.name }} - GIPL Products{% endblock %}
+{% load static %}
+
+{% block title %}{{ category.name }} - Products | GIPL{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <h1 class="text-center mb-4">{{ category.name }}</h1>
-  <div class="row">
+<!-- Hero Section -->
+<section class="product-hero">
+  <div class="position-relative">
+    <!-- Responsive Hero Image -->
+    <picture>
+      <source media="(max-width: 768px)" srcset="{% static 'images/product_mobile_hero.webp' %}">
+      <img src="{% static 'images/product_desktop_hero.webp' %}" alt="Product Hero" class="w-100 object-fit-cover" style="max-height: 80vh;">
+    </picture>
+
+    <!-- Text Overlay -->
+    <div class="hero-text-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center px-4 px-md-4">
+      <div class="container">
+        <div class="col-md-6">
+          <h1 class="mb-3 text-white">Premium Products for Global Markets</h1>
+          <p class="mb-4 text-white">Explore our diverse range of high-quality exports, sourced with precision and delivered with excellence.</p>
+          <a href="/contact/" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Cards Section -->
+<section class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="mb-3">Products in {{ category.name }}</h2>
+    <p class="text-muted">Premium, compliant, and ready for global trade.</p>
+  </div>
+
+  <div class="row g-4  py-5 px-4 px-md-4">
     {% for product in products %}
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
+    <div class="col-md-3">
+      <div class="card h-100 shadow-lg border-0">
         {% if product.image %}
-        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+        <img src="{{ product.image.url }}" class="card-img-top object-fit-cover" style="height: 250px;" alt="{{ product.name }}">
         {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description|truncatewords:15 }}</p>
-          <a href="{% url 'product_detail' category.slug product.slug %}" class="btn btn-outline-primary">View Details</a>
+          <p class="card-text">{{ product.description|truncatewords:25 }}</p>
+          {% if product.specs %}
+          <p class="text-muted small"><strong>Specs:</strong> {{ product.specs }}</p>
+          {% endif %}
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-</div>
+</section>
 {% endblock %}

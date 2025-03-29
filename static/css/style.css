@@ -44,10 +44,6 @@ body {
   opacity: .90;
 }
 
-a{
-  font-size: var(--p-size);
-}
-
 hr{
   border-color: var(--text-color);
   border-width: 0.08rem;
