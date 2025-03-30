@@ -1,9 +1,13 @@
-#!/bin/bash
-
+<<<<<<< HEAD
 # Activate virtual environment
 source ../venv/bin/activate
+# Activate virtual environment
+source /home/gitanshuimpex/venv/bin/activate
 
-# Navigate to project folder
+# Load environment variables
+export $(cat /home/gitanshuimpex/gitanshuimpex/.env | xargs)
+
+# Navigate to the project directory
 cd /home/gitanshuimpex/gitanshuimpex
 
 # Collect static files
@@ -19,5 +23,4 @@ exec gunicorn gipl_website.wsgi:application \
   --timeout 120 \
   --log-level info \
   --log-file logs/gunicorn.log
-
 
