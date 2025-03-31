@@ -1,54 +1,52 @@
 {% extends "gipl_app/base.html" %}
 {% load static %}
 {% block title %}Products - GIPL{% endblock %}
+
 {% block content %}
 
 <!-- Hero Section -->
-<section class="product-hero">
-  <div class="position-relative">
-    <!-- Responsive Hero Image -->
-    <picture>
-      <source media="(max-width: 768px)" srcset="{% static 'images/product_mobile_hero.webp' %}">
-      <img src="{% static 'images/product_desktop_hero.webp' %}" alt="Product Hero" class="w-100 object-fit-cover" style="max-height: 80vh;">
-    </picture>
+<section class="product-hero position-relative">
+  <picture>
+    <source media="(max-width: 768px)" srcset="{% static 'images/product_mobile_hero.webp' %}">
+    <img src="{% static 'images/product_desktop_hero.webp' %}" alt="Product Hero" class="w-100 object-fit-cover" style="max-height: 80vh;">
+  </picture>
 
-    <!-- Text Overlay -->
-    <div class="hero-text-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center px-4 px-md-4">
-      <div class="container">
-        <div class="col-md-6">
-          <h1 class="mb-3 text-white">Premium Products for Global Markets</h1>
-          <p class="mb-4 text-white">Explore our diverse range of high-quality exports, sourced with precision and delivered with excellence.</p>
-          <a href="/contact/" class="btn btn-primary">Get in Touch</a>
-        </div>
+  <div class="hero-text-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+    <div class="container px-4 px-md-5">
+      <div class="col-md-6">
+        <h1 class="mb-3 text-white">Premium Products for Global Markets</h1>
+        <p class="mb-4 text-white">Explore our diverse range of high-quality exports, sourced with precision and delivered with excellence.</p>
+        <a href="/contact/" class="btn btn-primary">Get in Touch</a>
       </div>
     </div>
   </div>
 </section>
 
-
 <!-- Categories Section -->
-<section class="product-categories py-5 px-4 px-md-4">
-  <div class="text-center mb-5">
-    <h2 class="mb-2">Our Export Categories</h2>
-    <p class="text-muted">Quality-assured products across multiple industries.</p>
-  </div>
-  <div class="row g-5">
-    {% for category in categories %}
-    <div class="col-12 col-md-3">
-      <div class="card border-0 category-card h-100 rounded">
-        {% if category.image %}
-        <div class="category-img-wrapper">
-          <img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-fluid object-fit-cover w-100" style="aspect-ratio: 4/3;">
-        </div>
-        {% endif %}
-        <div class="card-body p-4 d-flex flex-column justify-content-between">
-          <h5 class="mb-2">{{ category.name }}</h5>
-          <p class="text-muted">{{ category.description|truncatewords:30 }}</p>
-          <a href="{% url 'category_detail' category.slug %}" class="btn btn-primary mt-3">Show Products</a>
+<section class="py-5">
+  <div class="container px-4 px-md-5">
+    <div class="text-center mb-5">
+      <h2 class="mb-2">Our Export Categories</h2>
+      <p class="text-muted">Quality-assured products across multiple industries.</p>
+    </div>
+    <div class="row g-4">
+      {% for category in categories %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card border-0 category-card h-100 rounded">
+          {% if category.image %}
+          <div class="category-img-wrapper">
+            <img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-fluid object-fit-cover w-100 rounded-top" style="aspect-ratio: 4/3;">
+          </div>
+          {% endif %}
+          <div class="card-body p-4 d-flex flex-column justify-content-between">
+            <h5 class="mb-2">{{ category.name }}</h5>
+            <p class="text-muted">{{ category.description|truncatewords:30 }}</p>
+            <a href="{% url 'category_detail' category.slug %}" class="btn btn-primary mt-3">Show Products</a>
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
 

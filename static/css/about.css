@@ -117,14 +117,14 @@
     color: var(--muted-gold);
     font-weight: bold;
   }
-
+/* 
   body {
     overflow-x: hidden;
-  }
+  } */
   
   .row, .container, section {
     margin: 0 !important;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   

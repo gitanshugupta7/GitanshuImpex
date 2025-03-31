@@ -2,7 +2,6 @@
 
 {% load static %}
 
-
 {% block title %}Home - GIPL{% endblock %}
 
 {% block content %}
@@ -16,7 +15,7 @@
         <h1>{{ item.title }}</h1>
         <p>{{ item.subtitle }}</p>
         {% if item.cta_text and item.cta_link %}
-        <a href="{{ item.cta_link }}">{{ item.cta_text }}</a>
+        <a class="btn btn-primary" href="{{ item.cta_link }}">{{ item.cta_text }}</a>
         {% endif %}
       </div>
       <div class="carousel-right d-none d-md-block" style="background-image: url('{{ item.desktop_image.url }}');">
@@ -106,7 +105,7 @@
 
 <section id="product-categories" class="row mx-0 px-4 py-3">
   <div class="container">
-    <h2 class="col-12 mb-5">Our Product Categories</h2>
+    <h2 class="col-12 mb-3 mb-md-5">Our Product Categories</h2>
     <div class="row g-4">
       {% for category in categories %}
       <div class="col-md-6 my-4 my-md-0">
@@ -134,14 +133,14 @@
 </section>
 
 <!--Global Presence-->
-<section class="row mx-0 my-4 px-0 text-white">
+<section class="row mx-0 my-4 px-0 text-white mt-2">
   <div class="p-0">
     <h2 class="col-12 mb-4 px-4">Our Global Presence</h2>
     <div id="globeViz"></div>
   </div>
 </section>
 
-<section id="testimonials" class="py-3 px-3">
+<section id="testimonials" class="py-3 px-3 mt-4">
   <div class="container">
     <h2 class="px-2 mb-3">What Our Clients Say</h2>
     <div class="row g-4">
