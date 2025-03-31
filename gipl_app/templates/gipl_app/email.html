@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You for Contacting GIPL</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #d6d7d8;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .email-wrapper {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 40px 30px;
+      border: 1px solid rgb(164, 164, 164);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+
+    .logo img {
+      max-height: 30px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1f1f1f;
+    }
+
+    .content {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #c4a148;
+      font-weight: 600;
+    }
+
+    .button {
+      margin: 30px 0;
+    }
+
+    .btn {
+      background-color: #57F3EE;
+      color: #0F1F5B;
+      padding: 12px 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      font-size: 15px;
+    }
+
+    .signature {
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      color: #444;
+    }
+
+    .signature p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="https://www.gitanshuimpex.com/static/images/WhiteBGBorderInnerShadow.webp" alt="GIPL Logo">
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="content">
+      <p>Dear {{ name }},</p>
+      <p>We appreciate your interest in <span class="highlight">Gitanshu Impex Pvt. Ltd.</span>. Your inquiry has been successfully received, and our team will get in touch with you shortly.</p>
+      <p>Thank you for choosing us as your trusted export partner.</p>
+
+      <div class="button">
+        <a href="mailto:gitanshuimpex@gmail.com" class="btn">Reply to this Email</a>
+      </div>
+
+      <!-- Signature -->
+      <div class="signature">
+        <p>Warm regards,</p>
+        <p><strong>Jitendra Gupta</strong></p>
+        <p>Director, Gitanshu Impex Pvt. Ltd.</p>
+        <p>Email: <a href="mailto:gitanshuimpex@gmail.com">gitanshuimpex@gmail.com</a></p>
+        <p>Phone: +91 9830672459</p>
+        <p>Website: <a href="https://www.gitanshuimpex.com">www.gitanshuimpex.com</a></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      &copy; {{ year }} Gitanshu Impex Pvt. Ltd. All Rights Reserved.
+    </div>
+  </div>
+</body>
+</html>

@@ -6,6 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}GIPL - Global Trade Solutions{% endblock %}</title>
 
+  <meta name="description" content="GIPL is a leading global exporter, delivering high-quality Indian products with reliability, compliance, and care.">
+  <meta name="author" content="Gitanshu Impex Pvt. Ltd.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GIPL - Global Trade Solutions">
+  <meta property="og:description" content="Explore GIPL's premium export services, delivering excellence worldwide.">
+  <meta property="og:image" content="https://www.gitanshuimpex.com/static/images/WhiteBGBorderInnerShadow.webp">
+  <meta property="og:url" content="https://www.gitanshuimpex.com/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GIPL - Global Trade Solutions">
+  <meta name="twitter:description" content="Exporting excellence from India to the world.">
+  <meta name="twitter:image" content="https://www.gitanshuimpex.com/static/images/WhiteBGBorderInnerShadow.webp">
+
+  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
   <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +101,7 @@
         </ul>
 
         <!-- Desktop Language Switcher -->
-        <div class="language-switcher mb-3 mb-md-0 ms-auto text-end">
+        <div class="language-switcher mb-3 mb-md-0 ms-auto text-end translate-container">
           <div id="google_translate_element"></div>
         </div>
 
@@ -95,11 +114,11 @@
     {% block content %}{% endblock %}
   </div>
 
-  <!--Main section-->
+  <!--Contact Form-->
   <section class="px-3 mb-5 mt-3">
     <div class="container">
       <div class="row mx-0 align-items-center">
-        <h2 class="mb-3 px-3">
+        <h2 class="mb-3 px-2">
           Let's Do Business Together
         </h2>
         <!-- Left: Text + Flags -->
@@ -123,7 +142,7 @@
         <!-- Right: Contact Form -->
         <div class="col-lg-6 border-md-only-start ps-lg-5 mt-4 mt-md-none">
           <h5 class="mb-3">Get In Touch</h5>
-          <form method="post" novalidate>
+          <form method="post" action="{% url 'global_inquiry' %}" novalidate>
             {% csrf_token %}
             <div class="row g-3">
               <div class="col-md-6">{{ form.name }}</div>
@@ -218,112 +237,6 @@
     });
   </script>
 
-  <!--Globe.gl-->
-  <!-- <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const textures = {
-        day: 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg',
-        night: 'https://unpkg.com/three-globe/example/img/earth-night.jpg'
-      };
-
-      // Get current hour (24hr format)
-      const currentHour = new Date().getUTCHours()
-
-      // Switch based on time (you can adjust thresholds)
-      const isDay = currentHour >= 6 && currentHour <= 18;
-      const globeImage = isDay ? textures.day : textures.night;
-      const globe = Globe({ rendererConfig: { alpha: true } })(document.getElementById('globeViz'));
-
-      const isMobile = window.innerWidth <= 768;
-
-      // Globe Configuration
-      //globe.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg');
-      //globe.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg');
-      globe.backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png');
-      globe.globeImageUrl(globeImage)
-      globe.scene().background = null;
-      globe.renderer().setClearColor(0x000000, 0)
-      globe.controls().autoRotate = true;
-      globe.controls().autoRotateSpeed = 0.6;
-      globe.pointOfView({ lat: 0, lng: 0, altitude: isMobile ? 3.7 : 2.6 })
-
-      // Data Points with Flags
-      const globePoints = [
-        { lat: 22.5726, lng: 88.3639, city: 'Kolkata, India', icon: 'https://flagcdn.com/in.svg' },
-        { lat: 16.8409, lng: 96.1735, city: 'Yangon, Myanmar', icon: 'https://flagcdn.com/mm.svg' },
-        { lat: 7.8731, lng: 80.7718, city: 'Sri Lanka', icon: 'https://flagcdn.com/lk.svg' },
-        { lat: 1.3521, lng: 103.8198, city: 'Singapore', icon: 'https://flagcdn.com/sg.svg' },
-        { lat: 38.9637, lng: 35.2433, city: 'Turkey', icon: 'https://flagcdn.com/tr.svg' },
-        { lat: 9.145, lng: 40.4897, city: 'Ethiopia', icon: 'https://flagcdn.com/et.svg' },
-        {
-          lat: -34.6037,
-          lng: -58.3816,
-          city: 'Buenos Aires, Argentina',
-          icon: 'https://flagcdn.com/ar.svg'
-        },
-        {
-          lat: 24.4539,
-          lng: 54.3773,
-          city: 'Abu Dhabi, UAE',
-          icon: 'https://flagcdn.com/ae.svg'
-        },
-        {
-          lat: 25.276987,
-          lng: 55.296249,
-          city: 'Dubai, UAE',
-          icon: 'https://flagcdn.com/ae.svg'
-        },
-        {
-          lat: 19.4326,
-          lng: -99.1332,
-          city: 'Mexico City, Mexico',
-          icon: 'https://flagcdn.com/mx.svg'
-        },
-        {
-          lat: 45.4215,
-          lng: -75.6972,
-          city: 'Ottawa, Canada',
-          icon: 'https://flagcdn.com/ca.svg'
-        },
-        {
-          lat: 39.9042,
-          lng: 116.4074,
-          city: 'Beijing, China',
-          icon: 'https://flagcdn.com/cn.svg'
-        },
-        {
-          lat: 35.6895,
-          lng: 139.6917,
-          city: 'Tokyo, Japan',
-          icon: 'https://flagcdn.com/jp.svg'
-        },
-        {
-          lat: 4.1755,
-          lng: 73.5093,
-          city: 'Malé, Maldives',
-          icon: 'https://flagcdn.com/mv.svg'
-        },
-        {
-          lat: -6.2088,
-          lng: 106.8456,
-          city: 'Jakarta, Indonesia',
-          icon: 'https://flagcdn.com/id.svg'
-        }
-      ];
-
-      globe.htmlElementsData(globePoints);
-
-      globe.htmlElement(d => {
-        const el = document.createElement('div');
-        el.className = 'glow-marker';
-        el.innerHTML = `
-          <img src="${d.icon}" title="${d.city}" style="width:20px;height:auto;" />
-        `;
-        return el;
-      });
-    });
-  </script> -->
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const textures = {
@@ -389,6 +302,21 @@
     });
   });
 </script>
+
+{% if messages %}
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:9999;">
+    {% for message in messages %}
+      <div class="toast show align-items-center text-bg-success border-0 mb-2" role="alert">
+        <div class="d-flex">
+          <div class="toast-body">
+            {{ message }}
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
 
 
 </body>

@@ -3,9 +3,9 @@
     box-sizing: border-box;
   }
   
-  body {
+  /* body {
     overflow-x: hidden;
-  }
+  } */
   
   /* Fix the globe section */
   #globeViz {

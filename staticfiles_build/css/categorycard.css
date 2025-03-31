@@ -4,16 +4,16 @@
     background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
     min-height: 260px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    border-left: 4px solid transparent;
+    box-shadow: 0 2.5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 2px solid transparent;
   }
   
   .product-card:hover {
     transform: translateY(-6px);
-    border-left: 4px solid var(--muted-gold); /* Gold border accent */
+    border-left: 2px solid var(--muted-gold); /* Gold border accent */
     box-shadow:
-      0 16px 32px rgba(0, 0, 0, 0.15),           /* Elevation shadow */
-      0 8px 16px 4px rgba(210, 180, 80, 0.1);         /* Muted gold outer glow */
+      0 5px 20px rgba(0, 0, 0, 0.15),           /* Elevation shadow */
+      0 5px 10px 4px rgba(210, 180, 80, 0.15);         /* Muted gold outer glow */
   }
   
   /* Left image container */
