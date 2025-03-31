@@ -25,9 +25,10 @@
   /* Colors */
   --heading-color: #111827;
   --text-color: #333333;
-  --cta-text: #FFFFFF;
+  --cta-text: #333333;
   --border-color: #E5E7EB;
-  --button-color: #18338C;
+  --button-color: #57F3EE;
+  --button-hover-color: #a0f8f5;
   --muted-gold: #D2B450;
   --dark-navy: #0F1F5B;
   --soft-gray: #F5F5F5;
@@ -42,10 +43,6 @@ body {
   margin: 0;
   padding: 0;
   opacity: .90;
-}
-
-a{
-  font-size: var(--p-size);
 }
 
 hr{
@@ -75,8 +72,8 @@ h6 { font-size: var(--h6-size); line-height: var(--h6-line); }
 
 /* Buttons */
 .btn-primary {
-  background-color: var(--dark-navy);
-  color: var(--cta-text);
+  background-color: var(--button-color);
+  color: var(--dark-navy);
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
@@ -90,9 +87,10 @@ h6 { font-size: var(--h6-size); line-height: var(--h6-line); }
   letter-spacing: -0.3px;
 }
 
+
 .btn-primary:hover {
-  background-color: var(--button-color); /* darker tone of button-color */
-  color: var(--cta-text);
+  background-color: var(--button-hover-color); /* darker tone of button-color */
+  color: var(--dark-navy);
 }
 
 .logo{ height: 4rem; }
@@ -208,4 +206,5 @@ i{
   border-radius: 10px;
   border-color: var(--so) !important;
 }
+
 

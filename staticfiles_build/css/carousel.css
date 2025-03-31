@@ -32,26 +32,6 @@
     margin: 20px 0;
   }
 
-  .carousel-left a {
-    padding: 12px 24px;
-    background-color: var(--dark-navy);
-    color: white;
-    text-decoration: none;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    border-radius: 8px;
-    font-size: 18px;
-    width: 14.5rem;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
-
-  .carousel-left a:hover {
-    background-color: var(--button-color); /* darker tone of button-color */
-    color: var(--cta-text);
-  }
-
   .carousel-right {
     flex: 1;
     background-size: cover;
