@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}GIPL - Global Trade Solutions{% endblock %}</title>
 
-  <meta name="description" content="GIPL is a leading global exporter, delivering high-quality Indian products with reliability, compliance, and care.">
+  <meta name="description"
+    content="GIPL is a leading global exporter, delivering high-quality Indian products with reliability, compliance, and care.">
   <meta name="author" content="Gitanshu Impex Pvt. Ltd.">
   <meta name="robots" content="index, follow">
 
@@ -29,7 +30,8 @@
   <!-- Google Fonts Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
 
   <!-- Bootstrap CSS -->
@@ -38,13 +40,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
 
   <!-- Three.js & Globe.gl -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.core.min.js"
-    integrity="sha512-E+bwrjS64UO37TAhlcnMswVADDY5NKoxaA/vMCUBN7Nl42bV1WwVvj1uUJ101kd/hd9HdgV4Raq0Sl+BEHgIzg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.41.3/dist/globe.gl.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.core.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.41.3/dist/globe.gl.min.js" defer></script>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -59,7 +62,7 @@
 
 </head>
 
-<script type="text/javascript">
+<script type="text/javascript" defer>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
       { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
@@ -68,7 +71,7 @@
   }
 </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer>
 </script>
 
 
@@ -169,7 +172,7 @@
         <div class="col-md-3 mb-4 mt-1">
           <img class="footer-logo" src="{% static 'images/NoBG.webp' %}" alt="Gitanshu Impex Logo">
         </div>
-  
+
         <!-- Navigation -->
         <div class="col-md-3 mb-4 px-4 px-md-2">
           <h5 class="fw-bold mb-3 offset-md-3">Navigation</h5>
@@ -181,19 +184,22 @@
             <li class="my-3"><a href="/contact/" class="text-dark text-decoration-none">Contact</a></li>
           </ul>
         </div>
-  
+
         <!-- Products -->
         <div class="col-md-3 mb-4 px-4 px-md-2">
           <h5 class="fw-bold mb-3 offset-md-1">Products</h5>
           <ul class="list-unstyled offset-md-1">
-            <li class="my-3"><a href="/products/carpenter-tools/" class="text-dark text-decoration-none">Carpenter Tools</a></li>
+            <li class="my-3"><a href="/products/carpenter-tools/" class="text-dark text-decoration-none">Carpenter
+                Tools</a></li>
             <li class="my-3"><a href="/products/al-drop/" class="text-dark text-decoration-none">AL Drop</a></li>
-            <li class="my-3"><a href="/products/aluminum-parts/" class="text-dark text-decoration-none">Aluminum Parts</a></li>
-            <li class="my-3"><a href="/products/sledge-hammer/" class="text-dark text-decoration-none">Sledge Hammer</a></li>
+            <li class="my-3"><a href="/products/aluminum-parts/" class="text-dark text-decoration-none">Aluminum
+                Parts</a></li>
+            <li class="my-3"><a href="/products/sledge-hammer/" class="text-dark text-decoration-none">Sledge Hammer</a>
+            </li>
             <li class="my-3"><a href="/products/tea-parts/" class="text-dark text-decoration-none">Tea Parts</a></li>
           </ul>
         </div>
-  
+
         <!-- Contact -->
         <div class="col-md-3 mb-4 px-4 px-md-2">
           <h5 class="fw-bold mb-3">Contact</h5>
@@ -212,7 +218,7 @@
           </div>
         </div>
       </div>
-  
+
       <!-- Footer Bottom -->
       <div class="row mx-0 border-top">
         <div class="col text-center mt-3">
@@ -220,13 +226,11 @@
         </div>
       </div>
     </div>
-  </footer>  
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
       loop: true,
@@ -237,86 +241,87 @@
     });
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const textures = {
-      day: 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg',
-      night: 'https://unpkg.com/three-globe/example/img/earth-night.jpg',
-      globalPresence: 'https://unpkg.com/three-globe/example/img/earth-night.jpg'
-    };
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const textures = {
+        day: 'static/images/earth-blue-marble.jpg',
+        night: 'static/images/earth-night.jpg',
+        globalPresence: 'static/images/earth-night.jpg'
+      };
 
-    const isMobile = window.innerWidth <= 768;
-    const currentPath = window.location.pathname;
+      const isMobile = window.innerWidth <= 768;
+      const currentPath = window.location.pathname;
 
-    const globeImage = currentPath.includes('/global-presence/')
-      ? textures.globalPresence
-      : (new Date().getUTCHours() >= 6 && new Date().getUTCHours() <= 18 ? textures.day : textures.night);
+      const globeImage = currentPath.includes('/global-presence/')
+        ? textures.globalPresence
+        : (new Date().getUTCHours() >= 6 && new Date().getUTCHours() <= 18 ? textures.day : textures.night);
 
-    const globe = Globe({ rendererConfig: { alpha: true } })(document.getElementById('globeViz'));
+      const globe = Globe({ rendererConfig: { alpha: true } })(document.getElementById('globeViz'));
 
-    // Set texture and environment
-    globe
-      .globeImageUrl(globeImage)
-      .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
-      .scene().background = null;
+      // Set texture and environment
+      globe
+        .globeImageUrl(globeImage)
+        .backgroundImageUrl('static/images/night-sky.png')
+        .scene().background = null;
 
-    globe.renderer().setClearColor(0x000000, 0);
+      globe.renderer().setClearColor(0x000000, 0);
 
-    // Set POV and autoRotate
-    globe.pointOfView({ lat: 0, lng: 0, altitude: isMobile ? 3.7 : 2.6 });
+      // Set POV and autoRotate
+      globe.pointOfView({ lat: 0, lng: 0, altitude: isMobile ? 4 : 2.6 });
 
-    globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.6;
-    globe.controls().enableZoom = false;
-    globe.controls().enablePan = false;
-    globe.controls().enableRotate = false;
+      globe.controls().autoRotate = true;
+      globe.controls().autoRotateSpeed = 0.6;
+      globe.controls().enableZoom = false;
+      globe.controls().enablePan = false;
+      globe.controls().enableRotate = false;
 
-    // Disable mouse interaction ONLY for Global Presence
+      // Disable mouse interaction ONLY for Global Presence
 
-    // Flags (used on both pages)
-    const globePoints = [
-      { lat: 22.5726, lng: 88.3639, city: 'Kolkata, India', icon: 'https://flagcdn.com/in.svg' },
-      { lat: 16.8409, lng: 96.1735, city: 'Yangon, Myanmar', icon: 'https://flagcdn.com/mm.svg' },
-      { lat: 7.8731, lng: 80.7718, city: 'Sri Lanka', icon: 'https://flagcdn.com/lk.svg' },
-      { lat: 1.3521, lng: 103.8198, city: 'Singapore', icon: 'https://flagcdn.com/sg.svg' },
-      { lat: 38.9637, lng: 35.2433, city: 'Turkey', icon: 'https://flagcdn.com/tr.svg' },
-      { lat: 9.145, lng: 40.4897, city: 'Ethiopia', icon: 'https://flagcdn.com/et.svg' },
-      { lat: -34.6037, lng: -58.3816, city: 'Argentina', icon: 'https://flagcdn.com/ar.svg' },
-      { lat: 24.4539, lng: 54.3773, city: 'Abu Dhabi, UAE', icon: 'https://flagcdn.com/ae.svg' },
-      { lat: 25.276987, lng: 55.296249, city: 'Dubai, UAE', icon: 'https://flagcdn.com/ae.svg' },
-      { lat: 19.4326, lng: -99.1332, city: 'Mexico', icon: 'https://flagcdn.com/mx.svg' },
-      { lat: 45.4215, lng: -75.6972, city: 'Canada', icon: 'https://flagcdn.com/ca.svg' },
-      { lat: 39.9042, lng: 116.4074, city: 'Beijing, China', icon: 'https://flagcdn.com/cn.svg' },
-      { lat: 35.6895, lng: 139.6917, city: 'Tokyo, Japan', icon: 'https://flagcdn.com/jp.svg' },
-      { lat: 4.1755, lng: 73.5093, city: 'Malé, Maldives', icon: 'https://flagcdn.com/mv.svg' },
-      { lat: -6.2088, lng: 106.8456, city: 'Jakarta, Indonesia', icon: 'https://flagcdn.com/id.svg' }
-    ];
+      // Flags (used on both pages)
+      const globePoints = [
+        { lat: 22.5726, lng: 88.3639, city: 'Kolkata, India', icon: 'https://flagcdn.com/in.svg' },
+        { lat: 16.8409, lng: 96.1735, city: 'Yangon, Myanmar', icon: 'https://flagcdn.com/mm.svg' },
+        { lat: 7.8731, lng: 80.7718, city: 'Sri Lanka', icon: 'https://flagcdn.com/lk.svg' },
+        { lat: 1.3521, lng: 103.8198, city: 'Singapore', icon: 'https://flagcdn.com/sg.svg' },
+        { lat: 38.9637, lng: 35.2433, city: 'Turkey', icon: 'https://flagcdn.com/tr.svg' },
+        { lat: 9.145, lng: 40.4897, city: 'Ethiopia', icon: 'https://flagcdn.com/et.svg' },
+        { lat: -34.6037, lng: -58.3816, city: 'Argentina', icon: 'https://flagcdn.com/ar.svg' },
+        { lat: 24.4539, lng: 54.3773, city: 'Abu Dhabi, UAE', icon: 'https://flagcdn.com/ae.svg' },
+        { lat: 25.276987, lng: 55.296249, city: 'Dubai, UAE', icon: 'https://flagcdn.com/ae.svg' },
+        { lat: 19.4326, lng: -99.1332, city: 'Mexico', icon: 'https://flagcdn.com/mx.svg' },
+        { lat: 45.4215, lng: -75.6972, city: 'Canada', icon: 'https://flagcdn.com/ca.svg' },
+        { lat: 39.9042, lng: 116.4074, city: 'Beijing, China', icon: 'https://flagcdn.com/cn.svg' },
+        { lat: 35.6895, lng: 139.6917, city: 'Tokyo, Japan', icon: 'https://flagcdn.com/jp.svg' },
+        { lat: 4.1755, lng: 73.5093, city: 'Malé, Maldives', icon: 'https://flagcdn.com/mv.svg' },
+        { lat: -6.2088, lng: 106.8456, city: 'Jakarta, Indonesia', icon: 'https://flagcdn.com/id.svg' }
+      ];
 
-    globe.htmlElementsData(globePoints);
+      globe.htmlElementsData(globePoints);
 
-    globe.htmlElement(d => {
-      const el = document.createElement('div');
-      el.className = 'glow-marker';
-      el.innerHTML = `<img src="${d.icon}" title="${d.city}" style="width:20px;height:auto;" />`;
-      return el;
+      globe.htmlElement(d => {
+        const el = document.createElement('div');
+        el.className = 'glow-marker';
+        el.innerHTML = `<img src="${d.icon}" title="${d.city}" style="width:20px;height:auto;" />`;
+        return el;
+      });
     });
-  });
-</script>
+  </script>
 
-{% if messages %}
+  {% if messages %}
   <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:9999;">
     {% for message in messages %}
-      <div class="toast show align-items-center text-bg-success border-0 mb-2" role="alert">
-        <div class="d-flex">
-          <div class="toast-body">
-            {{ message }}
-          </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    <div class="toast show align-items-center text-bg-success border-0 mb-2" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">
+          {{ message }}
         </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
       </div>
+    </div>
     {% endfor %}
   </div>
-{% endif %}
+  {% endif %}
 
 
 </body>
