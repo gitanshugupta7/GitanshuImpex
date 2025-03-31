@@ -252,16 +252,16 @@
       const isMobile = window.innerWidth <= 768;
       const currentPath = window.location.pathname;
 
-      const globeImage = currentPath.includes('/global-presence/')
-        ? textures.globalPresence
-        : (new Date().getUTCHours() >= 6 && new Date().getUTCHours() <= 18 ? textures.day : textures.night);
+      // const globeImage = currentPath.includes('/global-presence/')
+      //   ? textures.globalPresence
+      //   : (new Date().getUTCHours() >= 6 && new Date().getUTCHours() <= 18 ? textures.day : textures.night);
 
       const globe = Globe({ rendererConfig: { alpha: true } })(document.getElementById('globeViz'));
 
       // Set texture and environment
       globe
-        .globeImageUrl(globeImage)
-        .backgroundImageUrl('static/images/night-sky.png')
+        .globeImageUrl("{% static 'images/earth-night.jpg' %}")
+        .backgroundImageUrl("{% static 'images/night-sky.png' %}")
         .scene().background = null;
 
       globe.renderer().setClearColor(0x000000, 0);
