@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Activate virtual environment
 source ../venv/bin/activate
 # Activate virtual environment
