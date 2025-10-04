@@ -2287,3 +2287,17 @@ ModuleNotFoundError: No module named 'whitenoise'
 [2025-03-31 09:22:09 +0000] [100138] [INFO] Booting worker with pid: 100138
 [2025-03-31 09:22:09 +0000] [100139] [INFO] Booting worker with pid: 100139
 [2025-03-31 09:22:10 +0000] [100140] [INFO] Booting worker with pid: 100140
+[2025-04-05 11:07:03 +0000] [100140] [INFO] Worker exiting (pid: 100140)
+[2025-04-05 11:07:03 +0000] [100138] [INFO] Worker exiting (pid: 100138)
+[2025-04-05 11:07:03 +0000] [100139] [INFO] Worker exiting (pid: 100139)
+[2025-04-05 11:07:03 +0000] [100120] [INFO] Handling signal: term
+[2025-04-05 11:07:03 +0000] [100120] [WARNING] Worker with pid 100138 was terminated due to signal 15
+[2025-04-05 11:07:03 +0000] [100120] [WARNING] Worker with pid 100140 was terminated due to signal 15
+[2025-04-05 11:07:03 +0000] [100120] [WARNING] Worker with pid 100139 was terminated due to signal 15
+[2025-04-05 11:07:03 +0000] [100120] [INFO] Shutting down: Master
+[2025-04-05 11:07:05 +0000] [166118] [INFO] Starting gunicorn 20.1.0
+[2025-04-05 11:07:05 +0000] [166118] [INFO] Listening at: http://127.0.0.1:8001 (166118)
+[2025-04-05 11:07:05 +0000] [166118] [INFO] Using worker: sync
+[2025-04-05 11:07:05 +0000] [166135] [INFO] Booting worker with pid: 166135
+[2025-04-05 11:07:05 +0000] [166136] [INFO] Booting worker with pid: 166136
+[2025-04-05 11:07:05 +0000] [166137] [INFO] Booting worker with pid: 166137
