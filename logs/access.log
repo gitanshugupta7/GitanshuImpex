@@ -18439,3 +18439,8 @@
  - - [14/Mar/2026:15:50:55 +0000] "GET /storage/logs/laravel.log HTTP/1.0" 404 3767 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
  - - [14/Mar/2026:15:50:55 +0000] "GET /storage/logs/stripe.log HTTP/1.0" 404 3764 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36,Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
  - - [14/Mar/2026:15:50:55 +0000] "GET /storage/logs/payments.log HTTP/1.0" 404 3770 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36,Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+ - - [14/Mar/2026:16:09:40 +0000] "GET /wp-login.php HTTP/1.0" 404 3731 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.130 Safari/537.36"
+ - - [14/Mar/2026:16:09:42 +0000] "GET /wp-login.php HTTP/1.0" 404 3731 "http://gitanshuimpex.com/wp-login.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.159 Safari/537.36"
+ - - [14/Mar/2026:16:09:43 +0000] "GET /wp-admin/ HTTP/1.0" 404 3722 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.85 Safari/537.36"
+ - - [14/Mar/2026:16:09:43 +0000] "GET /wp-admin/ HTTP/1.0" 404 3722 "http://gitanshuimpex.com/wp-admin/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.159 Safari/537.36"
+ - - [14/Mar/2026:16:09:44 +0000] "GET /administrator/ HTTP/1.0" 404 3737 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/119.0.1"
