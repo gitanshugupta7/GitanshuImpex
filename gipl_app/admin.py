@@ -8,7 +8,8 @@ class CarouselItemAdmin(admin.ModelAdmin):
 
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug')
+    # Added subdomain_prefix so you can see it in the main table view
+    list_display = ('name', 'subdomain_prefix', 'slug') 
     prepopulated_fields = {"slug": ("name",)}
 
 @admin.register(Product)
