@@ -4,6 +4,17 @@ from django.utils.text import slugify
 class ProductCategory(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)
+    
+    # --- NEW FIELD ADDED HERE ---
+    subdomain_prefix = models.CharField(
+        max_length=50, 
+        unique=True, 
+        blank=True, 
+        null=True, 
+        help_text="Type the subdomain here. e.g., 'stationary' for stationary.gitanshuimpex.com"
+    )
+    # ----------------------------
+    
     image = models.ImageField(upload_to='category_images/', blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
@@ -16,16 +27,39 @@ class ProductCategory(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+        # Optional: Auto-generate subdomain from name if left blank
+        if not self.subdomain_prefix:
+            self.subdomain_prefix = slugify(self.name).replace("-", "") 
         super().save(*args, **kwargs)
 
 
+# class Product(models.Model):
+#     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='products')
+#     name = models.CharField(max_length=150)
+#     slug = models.SlugField(unique=True, blank=True)
+#     description = models.TextField()
+#     image = models.ImageField(upload_to='products/', blank=True, null=True)
+#     specs = models.TextField(blank=True)
+
+#     def __str__(self):
+#         return self.name
+
+#     def save(self, *args, **kwargs):
+#         if not self.slug:
+#             self.slug = slugify(self.name)
+#         super().save(*args, **kwargs)
 class Product(models.Model):
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='products')
+    category = models.ForeignKey('ProductCategory', on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=150)
     slug = models.SlugField(unique=True, blank=True)
     description = models.TextField()
     image = models.ImageField(upload_to='products/', blank=True, null=True)
     specs = models.TextField(blank=True)
+    moq = models.CharField(max_length=50, blank=True, null=True)
+    packaging = models.CharField(max_length=100, blank=True, null=True)
+    exported_to = models.CharField(max_length=200, blank=True, null=True)
+    features = models.JSONField(default=list, blank=True)  # e.g. ["Smooth Writing", "ISO Certified"]
+    attributes = models.JSONField(default=dict, blank=True)  # e.g. {"Ink Color": "Blue", "Tip Size": "0.7mm"}
 
     def __str__(self):
         return self.name
@@ -34,6 +68,7 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
 
 
 class Testimonial(models.Model):

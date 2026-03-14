@@ -2,7 +2,7 @@
 {% block title %}{{ product.name }} - Product Details{% endblock %}
 
 {% block content %}
-<section class="py-5">
+<!-- <section class="py-5">
   <div class="container px-4 px-md-5">
     <div class="row g-5 align-items-start">
       <div class="col-md-6">
@@ -20,5 +20,140 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+<style>
+.product-card {
+  perspective: 1200px;
+  width: 320px;
+  height: 420px; /* Ensures both sides align properly */
+  margin: 20px auto;
+}
+
+.product-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.product-card:hover .product-inner {
+  transform: rotateY(180deg);
+}
+
+.product-front,
+.product-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 20px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Front side styling */
+.product-front img {
+  width: 90%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.product-front h5 {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.product-front p {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Back side styling */
+.product-back {
+  transform: rotateY(180deg);
+  padding: 24px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.product-back h6 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.product-back p {
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 6px;
+}
+
+.product-back strong {
+  color: #000;
+}
+</style>
+
+<div class="product-card">
+  <div class="product-inner">
+
+    <!-- Front Side -->
+    <div class="product-front">
+      {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+      {% endif %}
+      <h5>{{ product.name }}</h5>
+      <p>
+        {% for feature in product.features %}
+          {{ feature }}{% if not forloop.last %} • {% endif %}
+        {% endfor %}
+      </p>
+      {% if product.moq %}
+      <p><strong>MOQ:</strong> {{ product.moq }}</p>
+      {% endif %}
+
+      {% if product.packaging %}
+      <p><strong>Packaging:</strong> {{ product.packaging }}</p>
+      {% endif %}
+
+      {% if product.exported_to %}
+      <p><strong>Exported To:</strong> {{ product.exported_to }}</p>
+      {% endif %}
+      <small class="text-muted d-block mt-2">{{ product.category.name }}</small>
+    </div>
+
+    <!-- Back Side -->
+    <div class="product-back">
+      {% if product.moq %}
+      <p><strong>MOQ:</strong> {{ product.moq }}</p>
+      {% endif %}
+
+      {% if product.packaging %}
+      <p><strong>Packaging:</strong> {{ product.packaging }}</p>
+      {% endif %}
+
+      {% if product.exported_to %}
+      <p><strong>Exported To:</strong> {{ product.exported_to }}</p>
+      {% endif %}
+
+      {% for key, value in product.attributes.items %}
+      <p><strong>{{ key }}:</strong> {{ value }}</p>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
 {% endblock %}

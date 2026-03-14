@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.gitanshuimpex.com', 'gitanshuimpex.com']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitanshuimpex.com', 'https://gitanshuimpex.com']
 
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
@@ -60,6 +61,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    # --- MIDDLEWARE to handle subdomains ---
+    'gipl_app.middleware.SubdomainMiddleware',
+    # ---------------------
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
