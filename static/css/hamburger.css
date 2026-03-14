@@ -1,0 +1,49 @@
+/* Remove default toggler styles */
+.custom-toggler {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.5rem;
+    box-shadow: none;
+  }
+  
+  /* Wrapper */
+  .hamburger {
+    display: inline-block;
+    width: 28px;
+    height: 20px;
+    position: relative;
+  }
+  
+  /* Each bar */
+  .bar {
+    display: block;
+    position: absolute;
+    height: 3px;
+    background-color: #0F1F5B;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Top Bar */
+  .top-bar {
+    width: 70%;
+    top: 0;
+    right: 0;
+  }
+  
+  /* Middle Bar */
+  .middle-bar {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+  
+  /* Bottom Bar */
+  .bottom-bar {
+    width: 70%;
+    bottom: 0;
+    right: 0;
+  }
+  
