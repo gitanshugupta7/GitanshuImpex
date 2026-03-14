@@ -26,8 +26,14 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['.gitanshuimpex.com', 'gitanshuimpex.com']
-CSRF_TRUSTED_ORIGINS = ['https://*.gitanshuimpex.com', 'https://gitanshuimpex.com']
+# Change this section:
+ALLOWED_HOSTS = ['gitanshuimpex.com', '.gitanshuimpex.com', 'localhost', '127.0.0.1']
+
+# Ensure BOTH the main domain and wildcards are trusted for forms/admin
+CSRF_TRUSTED_ORIGINS = [
+    'https://gitanshuimpex.com',
+    'https://*.gitanshuimpex.com'
+]
 
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
