@@ -13,6 +13,9 @@ class Subdomain(models.Model):
     # Professional Touch: Subdomain-specific Branding
     hero_title = models.CharField(max_length=200, blank=True, null=True)
     hero_subtitle = models.TextField(blank=True, null=True)
+    meta_title = models.CharField(max_length=200, blank=True, null=True)
+    meta_description = models.TextField(blank=True, null=True)
+    hero_title = models.CharField(max_length=200, blank=True, null=True)
     
     def __str__(self):
         return f"{self.prefix}.gitanshuimpex.com"
