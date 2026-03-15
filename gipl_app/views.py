@@ -8,19 +8,36 @@ from .forms import InquiryForm
 from .models import *
 
 def home(request):
-    # If on a subdomain (e.g., stationary.gitanshuimpex.com), ONLY fetch the stationary category
-    if hasattr(request, 'subdomain') and request.subdomain:
-        categories = ProductCategory.objects.filter(subdomain_prefix=request.subdomain)
-    # If on the main domain (gitanshuimpex.com), fetch ALL categories
+    # 1. Identify the subdomain (e.g., 'stationary')
+    # If you are using middleware that sets request.subdomain, use that.
+    # Otherwise, we extract it from the host.
+    subdomain_val = getattr(request, 'subdomain', None)
+    
+    if not subdomain_val:
+        host_parts = request.get_host().split('.')
+        if len(host_parts) > 2:
+            subdomain_val = host_parts[0]
+
+    # 2. Filter categories based on the NEW Foreign Key relationship
+    if subdomain_val and subdomain_val not in ['www', 'gitanshuimpex']:
+        # We use 'subdomain__prefix' to filter through the relationship
+        categories = ProductCategory.objects.filter(
+            subdomain__prefix=subdomain_val,
+            subdomain__is_active=True
+        )
+        # Fetch subdomain-specific branding for the Hero section
+        sub_info = Subdomain.objects.filter(prefix=subdomain_val).first()
     else:
+        # Main domain shows everything
         categories = ProductCategory.objects.all()
+        sub_info = None
         
     carousel_items = CarouselItem.objects.all()
     testimonials = Testimonial.objects.all()
     
-    # Loads the exact same template regardless of domain
     return render(request, 'gipl_app/home.html', {
         'categories': categories,
+        'sub_info': sub_info, # Added to context for dynamic headers
         'carousel_items': carousel_items,
         'testimonials': testimonials,
     })
