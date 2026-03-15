@@ -74,23 +74,19 @@ def products(request):
 from django.shortcuts import render, get_object_or_404
 from .models import ProductCategory, Product
 
-def category_products(request, slug):
-    # 1. Fetch the category using the slug
-    category = get_object_or_404(ProductCategory, slug=slug)
+# Change 'slug' to 'category_slug' to match your urls.py
+def category_products(request, category_slug):
+    # Use category_slug here
+    category = get_object_or_404(ProductCategory, slug=category_slug)
 
-    # 2. Security/UX Check: Ensure this category belongs to the current subdomain
-    # This prevents users from accessing 'stationary' categories while on 'industrial' subdomain
     host = request.get_host().split('.')
     current_subdomain = host[0] if len(host) > 2 else None
 
     if current_subdomain and current_subdomain not in ['www', 'gitanshuimpex']:
-        # Check if the category is linked to the active subdomain
         if not category.subdomain or category.subdomain.prefix != current_subdomain:
-            # Optionally redirect to home or show 404 if it doesn't belong here
             from django.http import Http404
             raise Http404("Product category not found on this subdomain.")
 
-    # 3. Fetch products for this category
     products = Product.objects.filter(category=category)
 
     return render(request, 'gipl_app/category_products.html', {
@@ -98,6 +94,8 @@ def category_products(request, slug):
         'products': products,
     })
 
+# IMPORTANT: Remove the duplicate global_presence function at the bottom 
+# of your views.py so it doesn't override the one with sub_info logic.
 def product_detail(request, category_slug, product_slug):
     product = get_object_or_404(Product, slug=product_slug, category__slug=category_slug)
     
