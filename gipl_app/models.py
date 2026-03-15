@@ -10,12 +10,11 @@ class Subdomain(models.Model):
     )
     is_active = models.BooleanField(default=True)
     
-    # Professional Touch: Subdomain-specific Branding
+    # Professional Touch: Subdomain-specific Branding & SEO
     hero_title = models.CharField(max_length=200, blank=True, null=True)
     hero_subtitle = models.TextField(blank=True, null=True)
     meta_title = models.CharField(max_length=200, blank=True, null=True)
     meta_description = models.TextField(blank=True, null=True)
-    hero_title = models.CharField(max_length=200, blank=True, null=True)
     
     def __str__(self):
         return f"{self.prefix}.gitanshuimpex.com"
@@ -43,22 +42,8 @@ class ProductCategory(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+        # Removed the 'subdomain_prefix' logic that was causing the AttributeError
         super().save(*args, **kwargs)
-
-    class Meta:
-        verbose_name_plural = "Product Categories"
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        # Optional: Auto-generate subdomain from name if left blank
-        if not self.subdomain_prefix:
-            self.subdomain_prefix = slugify(self.name).replace("-", "") 
-        super().save(*args, **kwargs)
-
 
 class Product(models.Model):
     category = models.ForeignKey('ProductCategory', on_delete=models.CASCADE, related_name='products')
@@ -70,8 +55,8 @@ class Product(models.Model):
     moq = models.CharField(max_length=50, blank=True, null=True)
     packaging = models.CharField(max_length=100, blank=True, null=True)
     exported_to = models.CharField(max_length=200, blank=True, null=True)
-    features = models.JSONField(default=list, blank=True)  # e.g. ["Smooth Writing", "ISO Certified"]
-    attributes = models.JSONField(default=dict, blank=True)  # e.g. {"Ink Color": "Blue", "Tip Size": "0.7mm"}
+    features = models.JSONField(default=list, blank=True)
+    attributes = models.JSONField(default=dict, blank=True)
 
     def __str__(self):
         return self.name
@@ -80,8 +65,6 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-
-
 
 class Testimonial(models.Model):
     name = models.CharField(max_length=100)
@@ -92,18 +75,19 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.name
 
-# Model for the common Contact/Inquiries form ("Let's Do Business Together")
 class Inquiry(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     phone = models.CharField(max_length=20, blank=True, null=True)
-    country_code = models.CharField(max_length=10)  # New field
+    country_code = models.CharField(max_length=10)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = "Inquiries"
+
     def __str__(self):
         return f"Inquiry from {self.name} on {self.created_at.strftime('%Y-%m-%d')}"
-
 
 class CarouselItem(models.Model):
     title = models.CharField(max_length=255)
