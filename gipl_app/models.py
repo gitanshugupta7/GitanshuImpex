@@ -82,6 +82,7 @@ class Inquiry(models.Model):
     country_code = models.CharField(max_length=10)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    source_subdomain = models.CharField(max_length=100, blank=True, null=True, help_text="The subdomain where the lead originated")
 
     class Meta:
         verbose_name_plural = "Inquiries"
