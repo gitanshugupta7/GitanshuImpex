@@ -164,3 +164,326 @@ ModuleNotFoundError: No module named 'gitanshuimpex'
 [2026-03-14 12:29:37 +0000] [1931425] [INFO] Booting worker with pid: 1931425
 [2026-03-14 12:29:37 +0000] [1931426] [INFO] Booting worker with pid: 1931426
 [2026-03-14 12:29:37 +0000] [1931427] [INFO] Booting worker with pid: 1931427
+[2026-03-14 16:14:38 +0000] [1931426] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+sqlite3.OperationalError: no such table: gipl_app_carouselitem
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+  File "/var/www/gitanshuimpex/gipl_app/views.py", line 14, in home
+    # If on the main domain (gitanshuimpex.com), fetch ALL categories
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 175, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 167, in _render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 1005, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 1005, in <listcomp>
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 966, in render_annotated
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/loader_tags.py", line 157, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 167, in _render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 1005, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 1005, in <listcomp>
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 966, in render_annotated
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/loader_tags.py", line 63, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 1005, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 1005, in <listcomp>
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/base.py", line 966, in render_annotated
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/template/defaulttags.py", line 194, in render
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/models/query.py", line 380, in __len__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/models/query.py", line 91, in __iter__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+django.db.utils.OperationalError: no such table: gipl_app_carouselitem
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/whitenoise/middleware.py", line 123, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/gunicorn/workers/gthread.py", line 271, in handle
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/gunicorn/workers/gthread.py", line 343, in handle_request
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/gunicorn/util.py", line 626, in reraise
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/gunicorn/workers/gthread.py", line 323, in handle_request
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 140, in get_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 67, in technical_500_response
+  File "/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/debug.py", line 408, in get_traceback_html
+  File "/usr/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/usr/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/gitanshuimpex/venv/lib/python3.9/site-packages/django/views/templates/technical_500.html'
+[2026-03-14 16:15:51 +0000] [1931414] [INFO] Handling signal: term
+[2026-03-14 16:15:51 +0000] [1931427] [INFO] Worker exiting (pid: 1931427)
+[2026-03-14 16:15:52 +0000] [1931426] [INFO] Worker exiting (pid: 1931426)
+[2026-03-14 16:15:52 +0000] [1931425] [INFO] Worker exiting (pid: 1931425)
+[2026-03-14 16:15:52 +0000] [1931414] [INFO] Shutting down: Master
+[2026-03-14 17:16:54 +0000] [1934803] [INFO] Starting gunicorn 20.1.0
+[2026-03-14 17:16:54 +0000] [1934803] [INFO] Listening at: unix:gitanshuimpex.sock (1934803)
+[2026-03-14 17:16:54 +0000] [1934803] [INFO] Using worker: gthread
+[2026-03-14 17:16:54 +0000] [1934814] [INFO] Booting worker with pid: 1934814
+[2026-03-14 17:16:55 +0000] [1934815] [INFO] Booting worker with pid: 1934815
+[2026-03-14 17:16:55 +0000] [1934816] [INFO] Booting worker with pid: 1934816
+[2026-03-14 17:26:01 +0000] [1934803] [INFO] Handling signal: term
+[2026-03-14 17:26:02 +0000] [1934816] [INFO] Worker exiting (pid: 1934816)
+[2026-03-14 17:26:02 +0000] [1934815] [INFO] Worker exiting (pid: 1934815)
+[2026-03-14 17:26:02 +0000] [1934814] [INFO] Worker exiting (pid: 1934814)
+[2026-03-14 17:26:02 +0000] [1934803] [INFO] Shutting down: Master
+[2026-03-14 17:26:02 +0000] [1934920] [INFO] Starting gunicorn 20.1.0
+[2026-03-14 17:26:02 +0000] [1934920] [INFO] Listening at: unix:gitanshuimpex.sock (1934920)
+[2026-03-14 17:26:02 +0000] [1934920] [INFO] Using worker: gthread
+[2026-03-14 17:26:02 +0000] [1934932] [INFO] Booting worker with pid: 1934932
+[2026-03-14 17:26:02 +0000] [1934933] [INFO] Booting worker with pid: 1934933
+[2026-03-14 17:26:03 +0000] [1934934] [INFO] Booting worker with pid: 1934934
+[2026-03-14 17:29:51 +0000] [1934920] [INFO] Handling signal: term
+[2026-03-14 17:29:51 +0000] [1934933] [INFO] Worker exiting (pid: 1934933)
+[2026-03-14 17:29:51 +0000] [1934932] [INFO] Worker exiting (pid: 1934932)
+[2026-03-14 17:29:52 +0000] [1934934] [INFO] Worker exiting (pid: 1934934)
+[2026-03-14 17:29:52 +0000] [1934920] [INFO] Shutting down: Master
+[2026-03-14 17:29:52 +0000] [1934959] [INFO] Starting gunicorn 20.1.0
+[2026-03-14 17:29:52 +0000] [1934959] [INFO] Listening at: unix:gitanshuimpex.sock (1934959)
+[2026-03-14 17:29:52 +0000] [1934959] [INFO] Using worker: gthread
+[2026-03-14 17:29:52 +0000] [1934970] [INFO] Booting worker with pid: 1934970
+[2026-03-14 17:29:52 +0000] [1934971] [INFO] Booting worker with pid: 1934971
+[2026-03-14 17:29:52 +0000] [1934972] [INFO] Booting worker with pid: 1934972
+[2026-03-14 17:53:37 +0000] [1934959] [INFO] Handling signal: term
+[2026-03-14 17:53:37 +0000] [1934971] [INFO] Worker exiting (pid: 1934971)
+[2026-03-14 17:53:38 +0000] [1934972] [INFO] Worker exiting (pid: 1934972)
+[2026-03-14 17:53:38 +0000] [1934970] [INFO] Worker exiting (pid: 1934970)
+[2026-03-14 17:53:38 +0000] [1934959] [INFO] Shutting down: Master
+[2026-03-14 17:53:39 +0000] [1935228] [INFO] Starting gunicorn 20.1.0
+[2026-03-14 17:53:39 +0000] [1935228] [INFO] Listening at: unix:gitanshuimpex.sock (1935228)
+[2026-03-14 17:53:39 +0000] [1935228] [INFO] Using worker: gthread
+[2026-03-14 17:53:39 +0000] [1935240] [INFO] Booting worker with pid: 1935240
+[2026-03-14 17:53:39 +0000] [1935241] [INFO] Booting worker with pid: 1935241
+[2026-03-14 17:53:39 +0000] [1935242] [INFO] Booting worker with pid: 1935242
+[2026-03-14 18:01:24 +0000] [1935228] [INFO] Handling signal: term
+[2026-03-14 18:01:24 +0000] [1935240] [INFO] Worker exiting (pid: 1935240)
+[2026-03-14 18:01:25 +0000] [1935241] [INFO] Worker exiting (pid: 1935241)
+[2026-03-14 18:01:25 +0000] [1935242] [INFO] Worker exiting (pid: 1935242)
+[2026-03-14 18:01:25 +0000] [1935228] [INFO] Shutting down: Master
+[2026-03-14 18:01:25 +0000] [1935290] [INFO] Starting gunicorn 20.1.0
+[2026-03-14 18:01:25 +0000] [1935290] [INFO] Listening at: unix:gitanshuimpex.sock (1935290)
+[2026-03-14 18:01:25 +0000] [1935290] [INFO] Using worker: gthread
+[2026-03-14 18:01:25 +0000] [1935302] [INFO] Booting worker with pid: 1935302
+[2026-03-14 18:01:25 +0000] [1935303] [INFO] Booting worker with pid: 1935303
+[2026-03-14 18:01:25 +0000] [1935304] [INFO] Booting worker with pid: 1935304
+[2026-03-14 18:06:38 +0000] [1935290] [INFO] Handling signal: term
+[2026-03-14 18:06:38 +0000] [1935302] [INFO] Worker exiting (pid: 1935302)
+[2026-03-14 18:06:38 +0000] [1935303] [INFO] Worker exiting (pid: 1935303)
+[2026-03-14 18:06:38 +0000] [1935304] [INFO] Worker exiting (pid: 1935304)
+[2026-03-14 18:06:38 +0000] [1935290] [INFO] Shutting down: Master
+[2026-03-14 18:06:39 +0000] [1935371] [INFO] Starting gunicorn 20.1.0
+[2026-03-14 18:06:39 +0000] [1935371] [INFO] Listening at: unix:gitanshuimpex.sock (1935371)
+[2026-03-14 18:06:39 +0000] [1935371] [INFO] Using worker: gthread
+[2026-03-14 18:06:39 +0000] [1935382] [INFO] Booting worker with pid: 1935382
+[2026-03-14 18:06:39 +0000] [1935383] [INFO] Booting worker with pid: 1935383
+[2026-03-14 18:06:39 +0000] [1935384] [INFO] Booting worker with pid: 1935384
+[2026-03-15 07:00:49 +0000] [1935371] [INFO] Handling signal: term
+[2026-03-15 07:00:50 +0000] [1935383] [INFO] Worker exiting (pid: 1935383)
+[2026-03-15 07:00:50 +0000] [1935384] [INFO] Worker exiting (pid: 1935384)
+[2026-03-15 07:00:50 +0000] [1935382] [INFO] Worker exiting (pid: 1935382)
+[2026-03-15 07:00:50 +0000] [1935371] [INFO] Shutting down: Master
+[2026-03-15 07:00:51 +0000] [1943389] [INFO] Starting gunicorn 20.1.0
+[2026-03-15 07:00:51 +0000] [1943389] [INFO] Listening at: unix:gitanshuimpex.sock (1943389)
+[2026-03-15 07:00:51 +0000] [1943389] [INFO] Using worker: gthread
+[2026-03-15 07:00:51 +0000] [1943401] [INFO] Booting worker with pid: 1943401
+[2026-03-15 07:00:51 +0000] [1943402] [INFO] Booting worker with pid: 1943402
+[2026-03-15 07:00:51 +0000] [1943403] [INFO] Booting worker with pid: 1943403
+[2026-03-15 07:08:35 +0000] [1943389] [INFO] Handling signal: term
+[2026-03-15 07:08:36 +0000] [1943401] [INFO] Worker exiting (pid: 1943401)
+[2026-03-15 07:08:36 +0000] [1943402] [INFO] Worker exiting (pid: 1943402)
+[2026-03-15 07:08:36 +0000] [1943403] [INFO] Worker exiting (pid: 1943403)
+[2026-03-15 07:08:36 +0000] [1943389] [INFO] Shutting down: Master
+[2026-03-15 07:08:37 +0000] [1943468] [INFO] Starting gunicorn 20.1.0
+[2026-03-15 07:08:37 +0000] [1943468] [INFO] Listening at: unix:gitanshuimpex.sock (1943468)
+[2026-03-15 07:08:37 +0000] [1943468] [INFO] Using worker: gthread
+[2026-03-15 07:08:37 +0000] [1943479] [INFO] Booting worker with pid: 1943479
+[2026-03-15 07:08:37 +0000] [1943480] [INFO] Booting worker with pid: 1943480
+[2026-03-15 07:08:37 +0000] [1943481] [INFO] Booting worker with pid: 1943481
+[2026-03-15 07:13:23 +0000] [1943468] [INFO] Handling signal: term
+[2026-03-15 07:13:23 +0000] [1943480] [INFO] Worker exiting (pid: 1943480)
+[2026-03-15 07:13:24 +0000] [1943479] [INFO] Worker exiting (pid: 1943479)
+[2026-03-15 07:13:24 +0000] [1943481] [INFO] Worker exiting (pid: 1943481)
+[2026-03-15 07:13:24 +0000] [1943468] [INFO] Shutting down: Master
+[2026-03-15 07:13:24 +0000] [1943532] [INFO] Starting gunicorn 20.1.0
+[2026-03-15 07:13:24 +0000] [1943532] [INFO] Listening at: unix:gitanshuimpex.sock (1943532)
+[2026-03-15 07:13:24 +0000] [1943532] [INFO] Using worker: gthread
+[2026-03-15 07:13:24 +0000] [1943543] [INFO] Booting worker with pid: 1943543
+[2026-03-15 07:13:24 +0000] [1943544] [INFO] Booting worker with pid: 1943544
+[2026-03-15 07:13:25 +0000] [1943545] [INFO] Booting worker with pid: 1943545
+[2026-03-15 07:46:31 +0000] [1943532] [INFO] Handling signal: term
+[2026-03-15 07:46:31 +0000] [1943544] [INFO] Worker exiting (pid: 1943544)
+[2026-03-15 07:46:32 +0000] [1943543] [INFO] Worker exiting (pid: 1943543)
+[2026-03-15 07:46:32 +0000] [1943545] [INFO] Worker exiting (pid: 1943545)
+[2026-03-15 07:46:32 +0000] [1943532] [INFO] Shutting down: Master
+[2026-03-15 07:46:32 +0000] [1943829] [INFO] Starting gunicorn 20.1.0
+[2026-03-15 07:46:32 +0000] [1943829] [INFO] Listening at: unix:gitanshuimpex.sock (1943829)
+[2026-03-15 07:46:32 +0000] [1943829] [INFO] Using worker: gthread
+[2026-03-15 07:46:32 +0000] [1943841] [INFO] Booting worker with pid: 1943841
+[2026-03-15 07:46:33 +0000] [1943842] [INFO] Booting worker with pid: 1943842
+[2026-03-15 07:46:33 +0000] [1943843] [INFO] Booting worker with pid: 1943843
+[2026-03-15 07:50:36 +0000] [1943829] [INFO] Handling signal: term
+[2026-03-15 07:50:36 +0000] [1943843] [INFO] Worker exiting (pid: 1943843)
+[2026-03-15 07:50:36 +0000] [1943842] [INFO] Worker exiting (pid: 1943842)
+[2026-03-15 07:50:37 +0000] [1943841] [INFO] Worker exiting (pid: 1943841)
+[2026-03-15 07:50:37 +0000] [1943829] [INFO] Shutting down: Master
+[2026-03-15 07:50:37 +0000] [1943876] [INFO] Starting gunicorn 20.1.0
+[2026-03-15 07:50:37 +0000] [1943876] [INFO] Listening at: unix:gitanshuimpex.sock (1943876)
+[2026-03-15 07:50:37 +0000] [1943876] [INFO] Using worker: gthread
+[2026-03-15 07:50:37 +0000] [1943887] [INFO] Booting worker with pid: 1943887
+[2026-03-15 07:50:37 +0000] [1943888] [INFO] Booting worker with pid: 1943888
+[2026-03-15 07:50:37 +0000] [1943889] [INFO] Booting worker with pid: 1943889
+[2026-03-15 07:50:38 +0000] [1943876] [INFO] Handling signal: term
+[2026-03-15 07:50:39 +0000] [1943887] [INFO] Worker exiting (pid: 1943887)
+[2026-03-15 07:50:39 +0000] [1943888] [INFO] Worker exiting (pid: 1943888)
+[2026-03-15 07:50:39 +0000] [1943889] [INFO] Worker exiting (pid: 1943889)
+[2026-03-15 07:50:39 +0000] [1943876] [INFO] Shutting down: Master
+[2026-03-15 07:50:39 +0000] [1943893] [INFO] Starting gunicorn 20.1.0
+[2026-03-15 07:50:39 +0000] [1943893] [INFO] Listening at: unix:gitanshuimpex.sock (1943893)
+[2026-03-15 07:50:39 +0000] [1943893] [INFO] Using worker: gthread
+[2026-03-15 07:50:39 +0000] [1943894] [INFO] Booting worker with pid: 1943894
+[2026-03-15 07:50:39 +0000] [1943895] [INFO] Booting worker with pid: 1943895
+[2026-03-15 07:50:39 +0000] [1943896] [INFO] Booting worker with pid: 1943896
