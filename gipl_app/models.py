@@ -91,6 +91,13 @@ class Inquiry(models.Model):
         return f"Inquiry from {self.name} on {self.created_at.strftime('%Y-%m-%d')}"
 
 class CarouselItem(models.Model):
+    subdomain = models.ForeignKey(
+        Subdomain,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='carousel_items'
+    )
     title = models.CharField(max_length=255)
     subtitle = models.TextField()
     cta_text = models.CharField(max_length=50, blank=True, null=True)
