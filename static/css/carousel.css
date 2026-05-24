@@ -60,12 +60,10 @@
 
   .carousel-left {
     position: absolute;
-    bottom: 0;
     left: 0;
     width: 100%;
     z-index: 1;
     background: rgba(9, 23, 75, 0.4);
-    padding: 8rem 1rem;
   }
 
   .carousel-left h1 {
